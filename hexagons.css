@@ -29,6 +29,11 @@ body {
         -ms-transform: rotate(-60deg) skewY(30deg) translatez(-1px);
             transform: rotate(-60deg) skewY(30deg) translatez(-1px);
 }
+.flip .hex {
+    -webkit-transform: rotate(60deg) skewX(30deg) translatez(-1px);
+        -ms-transform: rotate(60deg) skewX(30deg) translatez(-1px);
+            transform: rotate(60deg) skewX(30deg) translatez(-1px);
+}
 .hex * {
     position: absolute;
     visibility: visible;
@@ -44,6 +49,11 @@ body {
     -webkit-transform: skewY(-30deg) rotate(60deg);
         -ms-transform: skewY(-30deg) rotate(60deg);
             transform: skewY(-30deg) rotate(60deg);
+}
+.flip .hexIn {
+  -webkit-transform: skewX(-30deg) rotate(-60deg);
+      -ms-transform: skewX(-30deg) rotate(-60deg);
+          transform: skewX(-30deg) rotate(-60deg);
 }
 
 /*** HEX CONTENT **********************************************************************/
@@ -106,126 +116,240 @@ body {
         width: 19.2%; /* = (100-4) / 5 */
         padding-bottom: 22.170%; /* =  width / sin(60deg) */
     }
-    .hex:nth-child(9n+6),
-    .hex:nth-child(9n+7),
-    .hex:nth-child(9n+8),
-    .hex:nth-child(9n+9) {
+    :not(.flip) > .hex:nth-child(9n+6),
+    :not(.flip) > .hex:nth-child(9n+7),
+    :not(.flip) > .hex:nth-child(9n+8),
+    :not(.flip) > .hex:nth-child(9n+9) {
         margin-top: -4.676%;
         margin-bottom: -4.676%;
         -webkit-transform: translateX(50%) rotate(-60deg) skewY(30deg);
             -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
                 transform: translateX(50%) rotate(-60deg) skewY(30deg);
     }
-    .hex:nth-child(9n+6):last-child,
-    .hex:nth-child(9n+7):last-child,
-    .hex:nth-child(9n+8):last-child,
-    .hex:nth-child(9n+9):last-child {
+    :not(.flip) > .hex:nth-child(9n+6):last-child,
+    :not(.flip) > .hex:nth-child(9n+7):last-child,
+    :not(.flip) > .hex:nth-child(9n+8):last-child,
+    :not(.flip) > .hex:nth-child(9n+9):last-child {
         margin-bottom: 0;
     }
-    .hex:nth-child(9n+6) {
+    :not(.flip) > .hex:nth-child(9n+6) {
         margin-left: 0.5%;
         clear: left;
     }
-    .hex:nth-child(9n+10) {
+    :not(.flip) > .hex:nth-child(9n+10) {
         clear: left;
     }
-    .hex:nth-child(9n+2),
-    .hex:nth-child(9n+ 7) {
+    :not(.flip) > .hex:nth-child(9n+2),
+    :not(.flip) > .hex:nth-child(9n+ 7) {
         margin-left: 1%;
         margin-right: 1%;
     }
-    .hex:nth-child(9n+3),
-    .hex:nth-child(9n+4),
-    .hex:nth-child(9n+8) {
+    :not(.flip) > .hex:nth-child(9n+3),
+    :not(.flip) > .hex:nth-child(9n+4),
+    :not(.flip) > .hex:nth-child(9n+8) {
         margin-right: 1%;
+    }
+    .flip .hex {
+        width: 22.170%; /* =  width / sin(60deg) */
+        padding-bottom: 19.2%; /* = (100-4) / 5 */
+    }
+    .flip .hex:nth-child(5n+4),
+    .flip .hex:nth-child(5n+5) {
+        margin-top: -8.564%;
+        margin-bottom: -8.564%;
+        -webkit-transform: translateX(50%) rotate(60deg) skewX(30deg);
+            -ms-transform: translateX(50%) rotate(60deg) skewX(30deg);
+                transform: translateX(50%) rotate(60deg) skewX(30deg);
+    }
+    .flip .hex:nth-child(5n+4):last-child,
+    .flip .hex:nth-child(5n+5):last-child {
+        margin-bottom: 0;
+    }
+    .flip .hex:nth-child(5n+1) {
+        margin-left: 3%;
+        clear: left;
+    }
+    .flip .hex:nth-child(5n+6) {
+        clear: left;
+    }
+    .flip .hex:nth-child(5n+2),
+    .flip .hex:nth-child(5n+5) {
+        margin-left: 14%;
+        margin-right: 14%;
+    }
+    .flip .hex:nth-child(5n+4){
+        margin-left: 10%;
     }
 }
 @media (max-width: 1200px) and (min-width:901px) {/* <- 4-3  hexagons per row */
-    .hex {
+    :not(.flip) > .hex {
         width: 24.25%; /* = (100-3) / 4 */
         padding-bottom: 28.001%; /* =  width / sin(60deg) */
     }
-    .hex:nth-child(7n+5),
-    .hex:nth-child(7n+6),
-    .hex:nth-child(7n+7) {
+    :not(.flip) > .hex:nth-child(7n+5),
+    :not(.flip) > .hex:nth-child(7n+6),
+    :not(.flip) > .hex:nth-child(7n+7) {
         margin-top: -6.134%;
         margin-bottom: -6.134%;
         -webkit-transform: translateX(50%) rotate(-60deg) skewY(30deg);
             -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
                 transform: translateX(50%) rotate(-60deg) skewY(30deg);
     }
-    .hex:nth-child(7n+5):last-child,
-    .hex:nth-child(7n+6):last-child,
-    .hex:nth-child(7n+7):last-child {
+    :not(.flip) > .hex:nth-child(7n+5):last-child,
+    :not(.flip) > .hex:nth-child(7n+6):last-child,
+    :not(.flip) > .hex:nth-child(7n+7):last-child {
         margin-bottom: 0;
     }
-    .hex:nth-child(7n+2),
-    .hex:nth-child(7n+6) {
+    :not(.flip) > .hex:nth-child(7n+2),
+    :not(.flip) > .hex:nth-child(7n+6) {
         margin-left: 1%;
         margin-right: 1%;
     }
-    .hex:nth-child(7n+3) {
+    :not(.flip) > .hex:nth-child(7n+3) {
         margin-right: 1%;
     }
-    .hex:nth-child(7n+8) {
+    :not(.flip) > .hex:nth-child(7n+8) {
         clear: left;
     }
-    .hex:nth-child(7n+5) {
+    :not(.flip) > .hex:nth-child(7n+5) {
         clear: left;
         margin-left: 0.5%;
     }
+    .flip .hex {
+        width: 22.170%; /* =  width / sin(60deg) */
+        padding-bottom: 19.2%; /* = (100-4) / 5 */
+    }
+    .flip .hex:nth-child(5n+4),
+    .flip .hex:nth-child(5n+5) {
+        margin-top: -8.564%;
+        margin-bottom: -8.564%;
+        -webkit-transform: translateX(50%) rotate(60deg) skewX(30deg);
+        -ms-transform: translateX(50%) rotate(60deg) skewX(30deg);
+        transform: translateX(50%) rotate(60deg) skewX(30deg);
+    }
+    .flip .hex:nth-child(5n+4):last-child,
+    .flip .hex:nth-child(5n+5):last-child {
+        margin-bottom: 0;
+    }
+    .flip .hex:nth-child(5n+1) {
+        margin-left: 3%;
+        clear: left;
+    }
+    .flip .hex:nth-child(5n+6) {
+        clear: left;
+    }
+    .flip .hex:nth-child(5n+2),
+    .flip .hex:nth-child(5n+5) {
+        margin-left: 14%;
+        margin-right: 14%;
+    }
+    .flip .hex:nth-child(5n+4){
+        margin-left: 10%;
+    }
 }
 @media (max-width: 900px) and (min-width:601px) { /* <- 3-2  hexagons per row */
-    .hex {
+    :not(.flip) > .hex {
         width: 32.666%; /* = (100-2) / 3 */
         padding-bottom: 37.720%; /* =  width / sin(60) */
     }
-    .hex:nth-child(5n+4),
-    .hex:nth-child(5n+5) {
+    :not(.flip) > .hex:nth-child(5n+4),
+    :not(.flip) > .hex:nth-child(5n+5) {
         margin-top: -8.564%;
         margin-bottom: -8.564%;
         -webkit-transform: translateX(50%) rotate(-60deg) skewY(30deg);
             -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
                 transform: translateX(50%) rotate(-60deg) skewY(30deg);
     }
-    .hex:nth-child(5n+4):last-child,
-    .hex:nth-child(5n+5):last-child {
+    :not(.flip) > .hex:nth-child(5n+4):last-child,
+    :not(.flip) > .hex:nth-child(5n+5):last-child {
         margin-bottom: 0;
     }
-    .hex:nth-child(5n+4) {
+    :not(.flip) > .hex:nth-child(5n+4) {
         margin-right: 1%;
         margin-left: 0.5%;
     }
-    .hex:nth-child(5n+2) {
+    :not(.flip) > .hex:nth-child(5n+2) {
         margin-left: 1%;
         margin-right: 1%;
     }
-    .hex:nth-child(5n+6) {
+    :not(.flip) > .hex:nth-child(5n+6) {
+        clear: left;
+    }
+    .flip .hex {
+        width: 37.720%; /* =  width / sin(60) */
+        padding-bottom: 32.666%; /* = (100-2) / 3 */
+    }
+    .flip .hex:nth-child(3n+3) {
+        margin-top: -15%;
+        margin-bottom: -15%;
+        -webkit-transform: translateX(50%) rotate(60deg) skewX(30deg);
+        -ms-transform: translateX(50%) rotate(60deg) skewX(30deg);
+        transform: translateX(50%) rotate(60deg) skewX(30deg);
+    }
+    .flip .hex:nth-child(3n+3):last-child {
+        margin-bottom: 0;
+    }
+    .flip .hex:nth-child(3n+1) {
+        margin-left: 0;
+    }
+    .flip .hex:nth-child(3n+2) {
+        margin-left: 24%;
+    }
+    .flip .hex:nth-child(3n+3) {
+        margin-left: 12%;
+    }
+    .flip .hex:nth-child(3n+4) {
         clear: left;
     }
 }
 @media (max-width: 600px) { /* <- 2-1  hexagons per row */
-    .hex {
+    :not(.flip) > .hex {
         width: 49.5%; /* = (100-1) / 2 */
         padding-bottom: 57.158%; /* =  width / sin(60) */
     }
-    .hex:nth-child(3n+3) {
+    :not(.flip) > .hex:nth-child(3n+3) {
         margin-top: -13.423%;
         margin-bottom: -13.423%;
         -webkit-transform: translateX(50%) rotate(-60deg) skewY(30deg);
             -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
                 transform: translateX(50%) rotate(-60deg) skewY(30deg);
     }
-    .hex:nth-child(3n+3):last-child {
+    :not(.flip) > .hex:nth-child(3n+3):last-child {
         margin-bottom: 0;
     }
-    .hex:nth-child(3n+3) {
+    :not(.flip) > .hex:nth-child(3n+3) {
         margin-left: 0.5%;
     }
-    .hex:nth-child(3n+2) {
+    :not(.flip) > .hex:nth-child(3n+2) {
         margin-left: 1%;
     }
-    .hex:nth-child(3n+4) {
+    :not(.flip) > .hex:nth-child(3n+4) {
+        clear: left;
+    }
+    .flip .hex {
+        width: 37.720%; /* =  width / sin(60) */
+        padding-bottom: 32.666%; /* = (100-2) / 3 */
+    }
+    .flip .hex:nth-child(3n+3) {
+        margin-top: -15%;
+        margin-bottom: -15%;
+        -webkit-transform: translateX(50%) rotate(60deg) skewX(30deg);
+        -ms-transform: translateX(50%) rotate(60deg) skewX(30deg);
+        transform: translateX(50%) rotate(60deg) skewX(30deg);
+    }
+    .flip .hex:nth-child(3n+3):last-child {
+        margin-bottom: 0;
+    }
+    .flip .hex:nth-child(3n+1) {
+        margin-left: 0;
+    }
+    .flip .hex:nth-child(3n+2) {
+        margin-left: 24%;
+    }
+    .flip .hex:nth-child(3n+3) {
+        margin-left: 12%;
+    }
+    .flip .hex:nth-child(3n+4) {
         clear: left;
     }
 }
